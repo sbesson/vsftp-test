@@ -15,5 +15,7 @@ find * -type f -exec sha1sum {} \; |  grep -v SHASUMS > SHASUMS
 # Generate upload script
 echo "open -u $USER,$PASS $SERVER" > /tmp/upload.scp
 echo "mkdir /incoming/test" >> /tmp/upload.scp
-echo "mirror --parallel=$THREADS -R /tmp/test/ /incoming/test/" >> /tmp/upload.scp
+echo "set ftp:use-site-utime false" >> /tmp/upload.scp
+echo "set ftp:use-site-utime2 false" >> /tmp/upload.scp
+echo "mirror -p --parallel=$THREADS -R /tmp/test/ /incoming/test/" >> /tmp/upload.scp
 echo "bye" >> /tmp/upload.scp
