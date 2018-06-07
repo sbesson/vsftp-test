@@ -1,0 +1,5 @@
+open -u anonymous,allowed@example.org ftpserver
+mkdir /incoming/test
+cd /incoming/test
+mirror --parallel=10 -R . .
+bye
