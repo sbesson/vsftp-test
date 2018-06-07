@@ -6,7 +6,5 @@ COPY generate.sh /tmp/generate.sh
 WORKDIR /data
 RUN sh /tmp/generate.sh
 
-COPY upload /tmp/upload
-
 ENTRYPOINT ["lftp"]
-CMD ["-f", "/tmp/upload"]
+CMD ["-f", "/tmp/upload.scp"]
