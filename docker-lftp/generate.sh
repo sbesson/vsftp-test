@@ -1,5 +1,5 @@
 #! /bin/sh
-uuid="$(cat /proc/sys/kernel/random/uuid)"
+UUID=${UUID:"$(cat /proc/sys/kernel/random/uuid)"}
 N=${N:-100}
 M=${M:-10}
 USER=${USER:-anonymous}
