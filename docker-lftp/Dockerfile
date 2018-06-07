@@ -7,4 +7,4 @@ WORKDIR /data
 RUN sh /tmp/generate.sh
 
 ENTRYPOINT ["lftp"]
-CMD ["-f", "/tmp/upload.scp"]
+CMD ["-f", "/tmp/upload.scp", "-d"]
