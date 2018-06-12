@@ -5,9 +5,13 @@ services:
     image: openmicroscopy/vsftpd-anonymous-upload:0.1.0
     ports:
       - "32021:32021"
+    volumes:
+      - "./out:/var/lib/ftp/incoming"
   ftpclient:
     build: docker-lftp
     # entrypoint: /bin/sh
     tty: true
     depends_on:
       - "ftpserver"
+    volumes:
+      - "./in:/in:ro"
